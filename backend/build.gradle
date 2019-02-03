@@ -27,9 +27,8 @@ targetCompatibility = JavaVersion.VERSION_1_7
 appengine {
 
     run {
-        port = 4444
+        port = 3333
     }
-
 
 }
 
