@@ -23,6 +23,7 @@ public class asyncTest {
         task.setListner(new EndpointsAsyncTask.taskListener() {
             @Override
             public void onComplete(String resultString) {
+                if (!resultString.equals(""))
                 testResultString = resultString;
 
             }

@@ -62,8 +62,13 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPostExecute(String result) {
        // Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-        if (mListner != null)
-            this.mListner.onComplete(result);
+        try {
+            if (mListner != null)
+                this.mListner.onComplete(result);
+        }catch (Exception e){
+            e.printStackTrace();
+            this.mListner.onComplete("");
+        }
         //while testing comment the next 3 lines.
         Intent intent = new Intent(context,JokeActivity.class);
         intent.putExtra("joke",result);
